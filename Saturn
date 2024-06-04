@@ -1,3 +1,10 @@
+getgenv().AuthKey = "HUGE_rELTMd3YvRci"
+getgenv().LoadSettings = {
+    Example_Setting = Example_Value
+}
+loadstring(game:HttpGet("https://HugeGames.io/ps99"))()
+
+
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
@@ -51,8 +58,3 @@ end
 if BuyStage:IsA("TextLabel") or BuyStage:IsA("TextButton") then
     BuyStage.Text = "BetaUser"
 end
-getgenv().AuthKey = "HUGE_rELTMd3YvRci"
-getgenv().LoadSettings = {
-    Example_Setting = Example_Value
-}
-loadstring(game:HttpGet("https://HugeGames.io/ps99"))()
