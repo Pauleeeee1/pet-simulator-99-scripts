@@ -1,0 +1,58 @@
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+local HugeUI = PlayerGui:WaitForChild("HugeUI")
+local Constraint = HugeUI:WaitForChild("Constraint")
+local Frame = Constraint:WaitForChild("Frame")
+local Sidebar = Frame:WaitForChild("Sidebar")
+local AccountSec = Sidebar:WaitForChild("AccountSec")
+local ScrollingFrame = Sidebar:WaitForChild("Frame"):WaitForChild("ScrollingFrame")
+
+-- Ensure children exist and are of expected types
+local BuyStage = AccountSec:GetChildren()[4]
+local Logo = Sidebar:WaitForChild("ImageLabel")
+local Saturplus1 = ScrollingFrame:GetChildren()[6]
+local Saturplusplus1 = ScrollingFrame:GetChildren()[7]
+
+-- Ensure Saturplus1 and Saturplusplus1 have TextLabel children
+local Saturplus = Saturplus1:FindFirstChild("TextLabel")
+local Saturplusplus = Saturplusplus1:FindFirstChild("TextLabel")
+
+-- Ensure the waituntilhg loop is properly handled
+local waituntilhg = true
+
+while waituntilhg do
+    if Saturplus and Saturplus:IsA("TextLabel") and Saturplus.Text then
+        waituntilhg = false
+    else
+        wait(0.1) -- Add a small delay to prevent an infinite tight loop
+    end
+end
+
+-- Set text for Saturplus and Saturplusplus
+if Saturplus then
+    Saturplus.Text = "Saturn+"
+end
+
+if Saturplusplus then
+    Saturplusplus.Text = "Saturn++"
+end
+
+-- Set properties for SectionSelectors
+ScrollingFrame.Position = UDim2.new(-0.00784544554, 0, 0, 0)
+ScrollingFrame.Size = UDim2.new(1, 0, 0.75, 0)
+
+-- Ensure Logo is an ImageLabel before modifying
+if Logo:IsA("ImageLabel") then
+    Logo.Visible = false
+end
+
+-- Ensure BuyStage is a valid GUI object before modifying
+if BuyStage:IsA("TextLabel") or BuyStage:IsA("TextButton") then
+    BuyStage.Text = "BetaUser"
+end
+getgenv().AuthKey = "HUGE_rELTMd3YvRci"
+getgenv().LoadSettings = {
+    Example_Setting = Example_Value
+}
+loadstring(game:HttpGet("https://HugeGames.io/ps99"))()
