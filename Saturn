@@ -1,3 +1,10 @@
+getgenv().AuthKey = "HUGE_rELTMd3YvRci"
+getgenv().LoadSettings = {
+    Example_Setting = Example_Value
+}
+loadstring(game:HttpGet("https://HugeGames.io/ps99"))()
+
+
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
@@ -7,7 +14,11 @@ local Frame = Constraint:WaitForChild("Frame")
 local Sidebar = Frame:WaitForChild("Sidebar")
 local AccountSec = Sidebar:WaitForChild("AccountSec")
 local ScrollingFrame = Sidebar:WaitForChild("Frame"):WaitForChild("ScrollingFrame")
-local HGOpenClose = game:GetService("Players").LocalPlayer.PlayerGui.MainLeft.Left.Tools.HugeGames
+local MainLeft = PlayerGui:WaitForChild("MainLeft")
+local Left = MainLeft:WaitForChild("Left")
+local Tools = Left:WaitForChild("Tools")
+local HugeGames = Tools:WaitForChild("HugeGames")
+local Thumbnail = HugeGames:WaitForChild("Thumbnail")
 
 -- Ensure children exist and are of expected types
 local BuyStage = AccountSec:GetChildren()[4]
@@ -31,8 +42,7 @@ while waituntilhg do
 end
 
 
-
-HGOpenClose.Thumbnail = "rblxassetid://17734144000"
+Thumbnail.Image = "rbxassetid://17734144000"
 -- Set text for Saturplus and Saturplusplus
 if Saturplus then
     Saturplus.Text = "Saturn+"
@@ -55,8 +65,3 @@ end
 if BuyStage:IsA("TextLabel") or BuyStage:IsA("TextButton") then
     BuyStage.Text = "BetaUser"
 end
-getgenv().AuthKey = "HUGE_rELTMd3YvRci"
-getgenv().LoadSettings = {
-    Example_Setting = Example_Value
-}
-loadstring(game:HttpGet("https://HugeGames.io/ps99"))()
